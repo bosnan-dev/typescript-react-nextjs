@@ -1,9 +1,9 @@
 type ButtonProps = {
-  style: React.CSSProperties;
+  userAges: Record<"Alice" | "Bob" | "Jose", number>
 }
 
-function Button({style}: ButtonProps) {
-  return <button style={style}>test</button>
+function Button({}: ButtonProps) {
+  return <button>test</button>
 }
 
 // const Button = ({text}: ButtonProps) => {
@@ -17,12 +17,12 @@ function Button({style}: ButtonProps) {
 function Page() {
   return (
     <div>
-      <Button style={{
-        backgroundColor: 'gold',
-        color: 'black',
-        fontSize: "160px",
-        padding: "100px"
-      }}
+      <Button
+      userAges={{
+        Alice: 20,
+        Bob: 21,
+        Jose: 22
+      }} 
       />
     </div>
   )
