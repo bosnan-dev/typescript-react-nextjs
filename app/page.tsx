@@ -1,15 +1,9 @@
-type Color = "red" | "blue" | "yellow" | "green" | "black" | "white" | "gray";
-
 type ButtonProps = {
-  text: string;
-  subtitle?: string;
-  color?: Color;
-  backgroundColor?: Color;
-  sizes: 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
+  style: React.CSSProperties;
 }
 
-function Button({text}: ButtonProps) {
-  return <button>{text}</button>
+function Button({style}: ButtonProps) {
+  return <button style={style}>test</button>
 }
 
 // const Button = ({text}: ButtonProps) => {
@@ -23,10 +17,12 @@ function Button({text}: ButtonProps) {
 function Page() {
   return (
     <div>
-      <Button text="Hello" 
-      backgroundColor="gray"
-      color="red"
-      sizes={50}
+      <Button style={{
+        backgroundColor: 'gold',
+        color: 'black',
+        fontSize: "160px",
+        padding: "100px"
+      }}
       />
     </div>
   )
