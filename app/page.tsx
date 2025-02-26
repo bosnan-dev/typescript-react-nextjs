@@ -1,20 +1,29 @@
-const user = {
-  name: 'John Doe',
-  age: 30,
-  email: 'john.doe@example.com'
+type ButtonProps = {
+  text: string;
+  subtitle?: string;
+  color?: string;
 }
 
-function Button(){
-
+function Button({text}: ButtonProps) {
   return (
-    <button>Text</button>
+    <button>
+      {text}
+    </button>
   )
 }
+
+// const Button = ({text}: ButtonProps) => {
+//   return <button>{text}</button>
+// }
+
+// const Button: React.FC<ButtonProps> = ({text}) => {
+//   return <button>{text}</button>
+// }
 
 function Page() {
   return (
     <div>
-      <Button />
+      <Button text="Hello" />
     </div>
   )
 }
