@@ -1,15 +1,15 @@
+type Color = "red" | "blue" | "yellow" | "green" | "black" | "white" | "gray";
+
 type ButtonProps = {
   text: string;
   subtitle?: string;
-  color?: string;
+  color?: Color;
+  backgroundColor?: Color;
+  sizes: 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
 }
 
 function Button({text}: ButtonProps) {
-  return (
-    <button>
-      {text}
-    </button>
-  )
+  return <button>{text}</button>
 }
 
 // const Button = ({text}: ButtonProps) => {
@@ -23,7 +23,11 @@ function Button({text}: ButtonProps) {
 function Page() {
   return (
     <div>
-      <Button text="Hello" />
+      <Button text="Hello" 
+      backgroundColor="gray"
+      color="red"
+      sizes={50}
+      />
     </div>
   )
 }
